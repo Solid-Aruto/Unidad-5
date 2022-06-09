@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Se importan los iconos de google -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Se importa materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="./index.css">
+
+    <!-- Esto hace que el sitio web este optimizado para télefonos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <!-- Se crea el encabezado, en este caso se hara uno con buscador -->
+  <header>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo"><i class="material-icons">file</i>VideoCenter</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+            <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+            <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+            <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+          </ul>
+        </div>
+      </nav>
+  </header>
+    <!-- se termina el encabezado y se crea  -->  
+  <body>
+    <!-- Carrusel de imagenes -->
+    <div id="index-banner" class="parallax-container">
+      <div class="section no-pad-bot">
+      <div class="container">
+      <h1 class="header center">Bienvenido a VideoCenter</h1>
+      <div class="row center">
+      <h5 class="header col s12 light">Una página web de videos de todo tipo</h5>
+      </div>
+      <div class="row center">
+      <a href="" id="download-button" class="btn-large
+      waves-effect waves-light teal lighten-1">Registrate</a>
+      </div>
+      </div>
+      </div>
+      <div class="parallax"><img src="./Imagenes/Camara1.jpg"
+      alt="Unsplashed background img 1"></div>
+      </div>
+    <!-- Comienza el Formulario-->
+   <div class="formulario">
+
+   </div>
+   <div class="formulario">
+    <form name="fvalida" action="./index.html" method="get">
+      <table>
+      <!-- Usuario -->
+      <tr>
+      <td>Usuario: </td>
+      <td><input type="text" name="usuario" size="30" maxlength="100"></td>
+      </tr>
+      <!-- Correo -->
+      <tr>
+        <td>Correo: </td>
+        <td><input type="text" name="correo" size="30" maxlength="100"></td>
+      </tr>
+      <tr>
+        <td>Contraseña: </td>
+        <td><input type="password" name="correo" size="30" maxlength="100"></td>
+      </tr>
+      <!-- Botón -->
+      <tr>
+      <td colspan="2" align="center"><input type="button" value="Ingresar"
+      onclick="valida_envia()"></td>
+      </tr>
+      </table>
+      </form>
+   </div>
+   <script>
+     function valida_envia(){
+      if (document.fvalida.usuario.value.length==0){
+        alert("Ingresa tu nombre de Usuario");
+        document.fvalida.usuario.focus(); 
+        return 0; 
+      }
+      alert("Muchas gracias por enviar el formulario");
+      document.fvalida.submit();
+      var s = document.fvalida.correo.value;
+      var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      if (!filtro.test(s)) {
+        alert('Introduzca un email válido');
+        document.fvalida.correo.focus();
+        return 0;
+      }
+      
+    }
+   </script>
+  </body>
+  <!-- Pie de pagina -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">VideoCenter</h5>
+          <p class="grey-text text-lighten-4">Quejas o sugerencias se pueden comunicar con lo siguiente.</p>
+          <a href=".Reproductor.html" onMouseOver="alert('No se queje carnal, es gratis');">Clic aqui</a>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Clic aqui.</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2022 Copyright.
+      <a class="grey-text text-lighten-4 right" href="https://i.ytimg.com/an_webp/dQw4w9WgXcQ/mqdefault_6s.webp?du=3000&sqp=CLDRnpQG&rs=AOn4CLDqx8kFvqoSTyeCERdb--xpdo65rg">Otra página</a>
+      </div>
+    </div>
+  </footer>
+</html>
